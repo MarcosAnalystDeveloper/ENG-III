@@ -1,0 +1,41 @@
+name: CI
+
+# Roda a cada push (em qualquer branch) e a cada Pull Request para a main.
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+  qualidade:
+    name: Lint, testes e build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências (reprodutível)
+        run: npm ci
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Testes unitários com cobertura (Vitest)
+        run: npm run coverage
+
+      - name: Build de produção
+        run: npm run build
+
+      - name: Guardar relatório de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobertura
+          path: coverage/
+          if-no-files-found: ignore

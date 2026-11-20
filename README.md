@@ -30,6 +30,32 @@ Abre em `http://localhost:5173`.
 Na primeira execução, o app semeia 4 agendamentos de exemplo no
 `localStorage`, para o painel administrativo não nascer vazio.
 
+## Qualidade, CI e deploy
+
+| Comando | O que faz |
+|---|---|
+| `npm run lint` | Verifica o código com ESLint |
+| `npm test` | Roda os testes unitários (Vitest) uma vez |
+| `npm run test:watch` | Roda os testes e reexecuta ao salvar |
+| `npm run coverage` | Testes + relatório de cobertura (`coverage/`) |
+| `npm run build` | Gera o build de produção em `dist/` |
+
+**Testes.** Ficam ao lado do código (`*.test.js`) e cobrem as regras de
+negócio: `utils/dateUtils`, `utils/validators`, `services/availabilityService`
+(choque de horários e horários livres), `services/appointmentService` e
+`services/storageService`. O `localStorage` é simulado pelo jsdom.
+
+**CI.** O GitHub Actions (`.github/workflows/ci.yml`) roda lint, testes com
+cobertura e build a cada push e a cada Pull Request para a `main`.
+
+**Deploy (staging).** A cada merge na `main`, `.github/workflows/deploy.yml`
+repete lint e testes e, se tudo passar, publica no GitHub Pages. Para ativar
+uma única vez: *Settings → Pages → Build and deployment → Source: GitHub
+Actions*. A URL fica em `https://<usuario>.github.io/<repositorio>/`.
+
+**Definition of Done.** Veja [`docs/DEFINITION_OF_DONE.md`](docs/DEFINITION_OF_DONE.md).
+Todo Pull Request usa o checklist de `.github/pull_request_template.md`.
+
 ## Arquitetura e decisões de projeto
 
 O projeto aplica, de forma deliberada, conceitos trabalhados ao longo da
