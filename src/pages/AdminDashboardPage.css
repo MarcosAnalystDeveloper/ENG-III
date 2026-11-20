@@ -1,0 +1,21 @@
+.admin-dashboard {
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.admin-dashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-dashboard__header h1 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.admin-dashboard__loading {
+  color: var(--color-text-muted);
+  padding: 2rem 0;
+}

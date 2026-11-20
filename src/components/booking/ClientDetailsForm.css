@@ -1,0 +1,27 @@
+.client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 420px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.field__error {
+  font-size: 0.78rem;
+  color: var(--color-danger);
+}
+
+.client-form textarea {
+  resize: vertical;
+}

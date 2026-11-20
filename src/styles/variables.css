@@ -1,0 +1,37 @@
+:root {
+  /* Paleta — identidade de barbearia: preto profundo + dourado + couro */
+  --color-bg: #0f0d0c;
+  --color-surface: #1a1715;
+  --color-surface-2: #241f1c;
+  --color-border: #332c27;
+
+  --color-gold: #c9a227;
+  --color-gold-bright: #e4c25c;
+  --color-gold-soft: rgba(201, 162, 39, 0.12);
+
+  --color-text: #f3ede4;
+  --color-text-muted: #a89f93;
+  --color-text-faint: #726a60;
+
+  --color-success: #4caf6a;
+  --color-success-bg: rgba(76, 175, 106, 0.12);
+  --color-danger: #d85c4f;
+  --color-danger-bg: rgba(216, 92, 79, 0.12);
+  --color-pending: #d9a441;
+  --color-pending-bg: rgba(217, 164, 65, 0.12);
+  --color-info: #5b9bd5;
+  --color-info-bg: rgba(91, 155, 213, 0.12);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-gold: 0 0 0 1px rgba(201, 162, 39, 0.4);
+
+  --transition: 0.18s ease;
+}

@@ -1,0 +1,26 @@
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 0.6rem;
+}
+
+.slot-btn {
+  padding: 0.55rem 0.4rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--color-text);
+  transition: border-color var(--transition), background var(--transition), color var(--transition);
+}
+
+.slot-btn:hover {
+  border-color: var(--color-gold);
+}
+
+.slot-btn.is-selected {
+  background: linear-gradient(135deg, var(--color-gold-bright), var(--color-gold));
+  border-color: var(--color-gold);
+  color: #1a1408;
+}

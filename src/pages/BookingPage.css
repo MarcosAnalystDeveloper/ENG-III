@@ -1,0 +1,68 @@
+.booking-page {
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.booking-page__intro {
+  margin-bottom: 2rem;
+  max-width: 620px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-bright);
+  margin-bottom: 0.5rem;
+}
+
+.booking-page__intro h1 {
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+}
+
+.booking-page__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.booking-page__layout > * {
+  min-width: 0;   /* novo */
+}
+
+.booking-page__main {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.booking-step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.booking-step__subtitle {
+  margin-top: 1.75rem;
+}
+
+.booking-step__nav {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.booking-step__nav-spacer {
+  flex: 1;
+}
+
+@media (max-width: 860px) {
+  .booking-page__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .booking-page__main { padding: 1.25rem; }
+}
